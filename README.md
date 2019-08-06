@@ -1,14 +1,14 @@
 
-Linguagem de Programação 3
+Linguagem de Programaï¿½ï¿½o 3
 
-Projeto da disciplina de Linguagem de proramação 3
+Projeto da disciplina de Linguagem de proramaï¿½ï¿½o 3
 
-Descrição:
+Descriï¿½ï¿½o:
 
-E-commerce de equipamentos eletrônicos.
+E-commerce de equipamentos eletrï¿½nicos.
 
 Autores:
 
-João Paulo Malvesti
+Joï¿½o Paulo Malvesti
 Guilherme Henrique Portigliotti
 Bruno Testolin
