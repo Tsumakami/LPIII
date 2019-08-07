@@ -1,8 +1,7 @@
 .titulo {
-    border-bottom: solid black 1px;   
+    border-bottom: solid black 1px;
+    color: red;
 }
-
 .logoMarca {
-    width: 100px;
-    height: 100px;
+  margin-top: 4px;
 }
