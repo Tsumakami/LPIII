@@ -1,7 +1,12 @@
 .titulo {
     border-bottom: solid black 1px;
-    color: red;
+    color: #ee6e73;
 }
+
 .logoMarca {
   margin-top: 4px;
+}
+
+.img-tam {
+  width: 100%;
 }
