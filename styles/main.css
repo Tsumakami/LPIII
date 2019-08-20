@@ -7,3 +7,17 @@ p {
 .brand-logo{
   margin-left: 1%;
 }
+
+.rodape {
+  height: 229px;
+  width: 100%;
+  position: absolute;
+}
+
+.cabecalho {
+    width: 100%;
+}
+
+.img-tam {
+  width: 100%;
+}
