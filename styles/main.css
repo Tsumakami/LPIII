@@ -29,7 +29,7 @@ p {
  .btn:hover{
    background-color:  rgba(239,154,154,1);
  }
- 
+
 input:not([type]):focus:not([readonly]),
 input[type=text]:not(.browser-default):focus:not([readonly]),
 input[type=password]:not(.browser-default):focus:not([readonly]),
@@ -62,6 +62,10 @@ input[type=number]:not(.browser-default):focus:not([readonly]) + label,
 input[type=search]:not(.browser-default):focus:not([readonly]) + label,
 textarea.materialize-textarea:focus:not([readonly]) + label {
   color: rgba(238, 110, 115, 1);
+}
+
+input[type=submit] {
+  color:white;
 }
 
 .input-field .prefix.active {
