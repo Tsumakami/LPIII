@@ -3,7 +3,16 @@
   height: 40%;
   margin: 5% auto;
 }
-input[type=submit]{
+
+input[type=submit] {
   width: 100%;
   height: 100%;
+}
+
+.login-registro-lembrar {
+  color: #9e9e9e;
+}
+
+.login-registro-lembrar:hover {
+  color: rgba(238, 110, 115, 1);
 }
