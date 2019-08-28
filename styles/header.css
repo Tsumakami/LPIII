@@ -5,3 +5,35 @@
 input#search {
     width: 25em;
 }
+
+::-webkit-input-placeholder {
+   color: white;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: white;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white;
+}
+
+:-ms-input-placeholder {
+   color: white;
+}
+
+.input-field input[type=search]:focus:not(.browser-default)::-webkit-input-placeholder {
+  color: black;
+}
+
+.input-field input[type=search]:focus:not(.browser-default):-moz-placeholder {
+  color: black;
+}
+
+.input-field input[type=search]:focus:not(.browser-default)::-moz-placeholder {
+  color: black;
+}
+
+.input-field input[type=search]:focus:not(.browser-default):-ms-input-placeholder {
+  color: black;
+}
