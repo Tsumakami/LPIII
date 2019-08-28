@@ -4,6 +4,7 @@
     <link href="../plugins/materialize/css/materialize.min.css" rel="stylesheet" type="text/css">
     <link href="../styles/sobre.css" rel="stylesheet" type="text/css">
     <link href="../styles/main.css" rel="stylesheet" type="text/css">
+    <link href="../styles/header.css" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -11,23 +12,31 @@
   <body>
     <header>
       <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">Login</a></li>
+        <li class="red lighten-2"><a href="../pages/login.html" target="_top" class="white-text">Login</a></li>
         <li class="divider"></li>
-        <li><a href="#!">Cadastre-se</a></li>
+        <li class="red lighten-2"><a href="../pages/cadastroUsuario.html" target="_top" class="white-text">Cadastre-se</a></li>
       </ul>
       <nav>
         <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">Kapich</a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <!-- Dropdown Trigger -->
-            <li><a class="dropdown-trigger dropdown-header" href="#!" data-target="dropdown1">Usuário<i class="material-icons right">arrow_drop_down</i></a></li>
-          </ul>
+          <a href="../pages/sobre.html" target="_top" class="brand-logo">Kapich</a>
+          <form>
+            <div class="input-field left">
+              <input id="search" type="search" required>
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons" onclick="removePesquisa()">close</i>
+            </div>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="sass.html">Sass</a></li>
+              <li><a href="badges.html">Components</a></li>
+              <!-- Dropdown Trigger -->
+              <li><a class="dropdown-trigger dropdown-header" href="#" data-target="dropdown1">Usuário<i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+          </form>
         </div>
       </nav>
     </header>
     </body>
     <script src="../scripts/sobre.js"></script>
+    <script src="../scripts/search.js"></script>
     <script src="../plugins/materialize/js/materialize.js"></script>
 </html>

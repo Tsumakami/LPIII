@@ -1,0 +1,3 @@
+function removePesquisa() {
+  $("#search").val("");
+}

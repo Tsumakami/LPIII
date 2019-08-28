@@ -1,0 +1,7 @@
+.input-field.left {
+    margin-left: 150px;
+}
+
+input#search {
+    width: 25em;
+}
