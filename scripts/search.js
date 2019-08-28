@@ -1,3 +1,3 @@
-function removePesquisa() {
+function removeTextoPesquisa() {
   $("#search").val("");
 }
