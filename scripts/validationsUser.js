@@ -318,6 +318,7 @@ document.querySelector('#rpassword').addEventListener("focusout", function () {
 
 //-->> Button:
 document.querySelector('#button').addEventListener("click", function validationSave() {
+    event.preventDefault();
     let name = document.querySelector('#nome');
     let phone = document.querySelector('#telefone');
     let cpf = document.querySelector('#cpf');
@@ -329,6 +330,20 @@ document.querySelector('#button').addEventListener("click", function validationS
         && rsenha.classList.contains('valid')) {
         alert('Dados Inseridos estão válidos!');
     } else {
+        if(name.classList.contains('invalid')) {
+            name.focus();
+        } else if(cpf.classList.contains('invalid')) {
+            cpf.focus();
+        } else if(email.classList.contains('invalid')) {
+            email.focus();
+        } else if(senha.classList.contains('invalid')) {
+            if(rsenha.length < senha.length) {
+                rsenha.focus();
+            } else {
+                senha.focus();
+            }
+            senha.focus();
+        } 
         alert('Dados Inseridos estão inválidos!');
     }
 });
