@@ -14,5 +14,9 @@ input[type=submit] {
 }
 
 .login-registro-lembrar:hover {
-  color: rgba(238, 110, 115, 1);
+  color: black;
+}
+
+i.btn.waves-effect.waves-red.col.s12.waves-input-wrapper {
+  background-color: black;
 }

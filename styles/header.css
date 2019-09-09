@@ -1,9 +1,15 @@
+nav {
+  background-color: black;
+}
+
 .input-field.left {
     margin-left: 150px;
 }
 
 input#search {
     width: 25em;
+    border-bottom: transparent;
+    margin-top: -1px;
 }
 
 ::-webkit-input-placeholder {
@@ -36,4 +42,8 @@ input#search {
 
 .input-field input[type=search]:focus:not(.browser-default):-ms-input-placeholder {
   color: black;
+}
+
+.white-text.cacetada:hover {
+  background-color: #A9A9A9;
 }

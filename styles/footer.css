@@ -1,3 +1,7 @@
+.page-footer {
+  background-color: black !important;
+}
+
 html {
   overflow-y: hidden;
   overflow-x: hidden;
@@ -24,16 +28,16 @@ input:not([type]).invalid ~ .helper-text:after,input:not([type]):focus.invalid ~
 
 .newsletter {
     position: absolute;
-    margin-left: 335px;
+    margin-left: 30em;
 }
 
-.col.l4.offset-l2.s12.links {
+/* .col.l4.offset-l2.s12.links {
       margin-left: 195px;
-}
+} */
 
-.row.infos-footer {
+/* .row.infos-footer {
   margin-left: -175px;
-}
+} */
 
 .texto-newsletter {
   margin-bottom: -10px;
@@ -58,4 +62,33 @@ input:not([type]).invalid ~ .helper-text:after,input:not([type]):focus.invalid ~
 button.btn.waves-effect.waves-light.botao-newsletter {
     position: fixed;
     margin-top: 24px;
+    background-color: black;
+    border: groove;
+}
+
+button.btn.waves-effect.waves-light.botao-newsletter:focus {
+    background-color: black;
+}
+
+.container {
+  width: 100% !important;
+}
+
+.col.l4.offset-l2.s12.links {
+  float: right;
+  margin-right: -274px;
+}
+
+h5.white-text.acompanhe {
+    float: left;
+    width: 31%;
+}
+
+div input#email {
+    color: white;
+}
+
+.icones-rede-social {
+    margin-top: 3.8em;
+    position: absolute;
 }

@@ -10,20 +10,22 @@
     <footer class="page-footer">
         <div class="container">
           <div class="row infos-footer">
-            <div class="col l6 s12">
-              <h5 class="white-text"><em>Acompanhe-nos:</em></h5>
-              <div class="col s1"><a href="#"> <img class="resposive-img circle img-tam" src="http://cinema.iecps.com.br/wp-content/uploads/2016/08/facebook-icon-transparent-background.png" alt="Icone do Facebook"></div>
-              <div class="col s1"><a href="#"> <img class="resposive-img circle img-tam" src="http://cinema.iecps.com.br/wp-content/uploads/2016/08/Instagram_App_Large_May2016_200.png" alt="Icone do Instagram"></a></div>
-            </div>
+            <div class="col l6">
+              <h5 class="white-text acompanhe"><em>Acompanhe-nos:</em></h5>
+              <div class="icones-rede-social">
+                <div class="col s1"><a href="#"> <img class="resposive-img circle img-tam" src="http://cinema.iecps.com.br/wp-content/uploads/2016/08/facebook-icon-transparent-background.png" alt="Icone do Facebook"></div>
+                <div class="col s1"><a href="#"> <img class="resposive-img circle img-tam" src="http://cinema.iecps.com.br/wp-content/uploads/2016/08/Instagram_App_Large_May2016_200.png" alt="Icone do Instagram"></div>
+              </div>
+              </div>
             <div class="newsletter">
               <h5 class="white-text texto-newsletter"><em>Cadastre-se e fique por dentro</em></h5>
               <form class="col s12">
                   <div class="input-field col s12">
                     <input id="email" type="email" class="validate" placeholder="Email">
                     <!-- <label class="white-text" for="email">Email</label> -->
-                    <!-- <span class="helper-text" data-error="Email invalido!" data-success="Email cadastrado com sucesso!"></span> -->
+                    <span class="helper-text msgFeedback"></span>
                   </div>
-                  <button class="btn waves-effect waves-light botao-newsletter" type="submit" onclick="submitNewsletter()" name="action">Submit
+                  <button class="btn waves-effect waves-light botao-newsletter" type="submit" onclick="submitNewsletter()" name="action">Enviar
                     <i class="material-icons right">send</i>
                   </button>
               </form>
@@ -31,9 +33,9 @@
             <div class="col l4 offset-l2 s12 links">
               <h5 class="white-text"><em>Links</em></h5>
               <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">Quem Somos</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Localização</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Nossas Lojas</a></li>
+                <li><a class="grey-text text-lighten-3" href="#">Quem Somos</a></li>
+                <li><a class="grey-text text-lighten-3" href="#">Nossas Lojas</a></li>
+                <li><a class="grey-text text-lighten-3" href="#">Localização</a></li>
               </ul>
             </div>
           </div>
@@ -41,7 +43,7 @@
         <div class="footer-copyright">
           <div class="container left">
           © 2019 Bruno Testolin, Guilherme Portigliotti, João Malvesti
-          <a class="grey-text text-lighten-4 right" href="#!">Nosso Blog</a>
+          <a class="grey-text text-lighten-4 right" href="#">Nosso Blog</a>
           </div>
         </div>
       </footer>
