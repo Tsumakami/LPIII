@@ -9,6 +9,6 @@ E-commerce de equipamentos eletrônicos.
 
 Autores:
 
-João Paulo Malvesti
-Guilherme Henrique Portigliotti
+João Paulo Malvesti,
+Guilherme Henrique Portigliotti,
 Bruno Testolin

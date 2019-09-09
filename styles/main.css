@@ -77,3 +77,7 @@ input.invalid:not([type]), input.invalid:not([type]):focus, input.invalid[type=t
     -webkit-box-shadow: 0 1px 0 0 black;
     box-shadow: 0 1px 0 0 black;
 }
+
+.slider {
+  margin-top: -92px;
+}
