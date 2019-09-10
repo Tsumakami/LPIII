@@ -80,4 +80,14 @@ input.invalid:not([type]), input.invalid:not([type]):focus, input.invalid[type=t
 
 .slider {
   margin-top: -92px;
+  z-index: -9;
+}
+.title-maisVendidos {
+  margin-left: 43px;
+  font-size: 2.2em;
+}
+
+.section-maisVendidos {
+  width: 20em;
+  margin-left: 3em;
 }
