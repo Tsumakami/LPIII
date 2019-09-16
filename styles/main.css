@@ -93,6 +93,15 @@ input.invalid:not([type]), input.invalid:not([type]):focus, input.invalid[type=t
 }
 
 .fakeImg {
-    background: no-repeat center;
-    background-size: cover;
+  background: no-repeat center;
+  background-size: cover;
+}
+
+/* .slider {
+  z-index: -1;
+} */
+
+div.card-image img {
+  width: 12.5em !important;
+  margin-left: 4.25em;
 }
