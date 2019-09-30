@@ -11,5 +11,5 @@ Autores:
 
 João Paulo Malvesti,
 Guilherme Henrique Portigliotti,
-Bruno Testolin
+Bruno Testolin,
 Flávio Luis Milani
