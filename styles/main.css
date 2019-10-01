@@ -16,6 +16,8 @@ p {
 
 .cabecalho {
     width: 100%;
+    position: relative;
+    z-index: 5;
 }
 
 section .cabecalho {
