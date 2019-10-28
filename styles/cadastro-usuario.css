@@ -1,0 +1,32 @@
+.rodape {
+      margin-top: 208px;
+}
+
+.invalid {
+      border-style: solid 1px;
+      border-color: red;
+}
+  
+.valid {
+      border-style: solid 1px;
+      border-color: green;
+}
+  
+.spanInvalid {
+      color: red;
+      font-weight: bold;
+}
+  
+.spanNone {
+      display: none;
+}
+  
+span {
+      font-size: 12px;
+      color: red;
+      font-weight: bold;
+    }
+
+.formulario {
+      margin-top: 5%;
+  }

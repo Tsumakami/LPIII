@@ -1,0 +1,52 @@
+  <head>
+    <link href="../plugins/materialize/css/materialize.min.css" rel="stylesheet" type="text/css">
+    <link href="../styles/sobre.css" rel="stylesheet" type="text/css">
+    <link href="../styles/main.css" rel="stylesheet" type="text/css">
+    <link href="../styles/footer.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+    <footer class="page-footer">
+        <div class="container">
+          <div class="row infos-footer">
+            <div class="col l6">
+              <h5 class="white-text acompanhe"><em>Acompanhe-nos:</em></h5>
+              <div class="icones-rede-social">
+                <div class="col s1"><a href="#"> <img class="resposive-img circle img-tam" src="../images/facebook.svg" alt="Icone do Facebook"></div>
+                <div class="col s1"><a href="#"> <img class="resposive-img circle img-tam" src="../images/instagram.svg" alt="Icone do Instagram"></div>
+                <div class="col s1"><a href="#"> <img class="resposive-img circle img-tam" src="../images/youtube.png" alt="Icone do YouTube"></div>
+              </div>
+              </div>
+            <div class="newsletter">
+              <h5 class="white-text texto-newsletter"><em>Cadastre-se e fique por dentro</em></h5>
+              <form class="col s12">
+                  <div class="input-field col s12">
+                    <input id="email" type="email" class="validate" placeholder="Email">
+                    <!-- <label class="white-text" for="email">Email</label> -->
+                    <span class="helper-text msgFeedback"></span>
+                  </div>
+                  <button class="btn waves-effect waves-light botao-newsletter" type="submit" onclick="submitNewsletter()" name="action">Enviar
+                    <i class="material-icons right">send</i>
+                  </button>
+              </form>
+            </div>
+            <div class="col l4 offset-l2 s12 links">
+              <h5 class="white-text"><em>Links</em></h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" target="_top" href="../pages/sobre.html">Quem Somos</a></li>
+                <li><a class="grey-text text-lighten-3" href="#">Nossas Lojas</a></li>
+                <li><a class="grey-text text-lighten-3" href="#">Localização</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container left">
+          © 2019 Bruno Testolin, Guilherme Portigliotti, João Malvesti, Flávio Milani
+          <a class="grey-text text-lighten-4 right" href="#">Nosso Blog</a>
+          </div>
+        </div>
+      </footer>
+      <script src="../plugins/materialize/js/materialize.js"></script>
+      <script src="../scripts/newsletter.js"></script>

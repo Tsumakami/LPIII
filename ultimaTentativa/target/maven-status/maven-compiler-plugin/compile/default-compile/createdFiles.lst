@@ -1,0 +1,10 @@
+com/mycompany/ultimatentativa/resources/LoginRest.class
+com/mycompany/ultimatentativa/JAXRSConfiguration.class
+com/mycompany/ultimatentativa/repositorio/ProdutoRepositorio.class
+com/mycompany/ultimatentativa/Pessoa.class
+com/mycompany/ultimatentativa/repositorio/PessoaRepositorio.class
+com/mycompany/ultimatentativa/resources/PessoaRest.class
+com/mycompany/ultimatentativa/Produto.class
+com/mycompany/ultimatentativa/resources/ProdutoRest.class
+com/mycompany/ultimatentativa/resources/JavaEE8Resource.class
+com/mycompany/ultimatentativa/repositorio/AbstractFacade.class

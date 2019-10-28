@@ -1,0 +1,22 @@
+.card-panel {
+  width: 30%;
+  height: 40%;
+  margin: 5% auto;
+}
+
+input[type=submit] {
+  width: 100%;
+  height: 100%;
+}
+
+.login-registro-lembrar {
+  color: #9e9e9e;
+}
+
+.login-registro-lembrar:hover {
+  color: black;
+}
+
+i.btn.waves-effect.waves-red.col.s12.waves-input-wrapper {
+  background-color: black;
+}

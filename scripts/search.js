@@ -1,0 +1,3 @@
+function removeTextoPesquisa() {
+  $("#search").val("");
+}

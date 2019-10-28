@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="../plugins/materialize/css/materialize.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='../styles/main.css'>
+    <link rel='stylesheet' type='text/css' href='../styles/login.css'>
+</head>
+<body>
+    <section>
+        <object class="cabecalho" type="text/html" data="../components/header.html"></object>
+    </section>
+    <div class="col s6 card-panel hoverable">
+        <form class="login-form" >
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">perm_identity</i>
+              <input class="validate" id="email" type="text" required>
+              <label for="email" data-error="wrong" data-success="right" data-error="wrong" data-success="right">E-mail/CPF</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">lock_outline</i>
+              <input class="validate" id="password" type="password" data-error="wrong" data-success="right" required>
+              <label for="password">Senha</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 m12 l12  login-text">
+                <label for="remember-me">
+                    <input type="checkbox" id="remember-me" />
+                    <span for="remember-me">Lembrar-me</span>
+                </label>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input type="submit" class="btn waves-effect waves-red col s12" onclick="login()" value="Login"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6 m6 l6">
+              <p class="margin medium-small"><a class="login-registro-lembrar" href="cadastroUsuario.html" target="_top">Registre-se!</a></p>
+            </div>
+            <div class="input-field col s6 m6 l6">
+                <p class="margin right-align medium-small"><a class="login-registro-lembrar" href="#">Esqueci minha senha</a></p>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+    <section>
+        <object class="rodape" type="text/html" data="../components/footer.html"></object>
+    </section>
+    <script src="../plugins/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript">
+      function login(){
+        let emailOrCPF = document.getElementById("email").value;;
+        console.log(emailOrCPF);
+        let senha = document.getElementById("password").value;
+        console.log(senha);
+        if(emailOrCPF== null || senha == null){
+          alert("Parametros invalidos, verifique seu E-mail/CPF e sua senha.");
+        }else{
+          alert("Login Efetuado com Sucesso");
+        }
+      }
+    </script>
+
+</body>
+</html>
