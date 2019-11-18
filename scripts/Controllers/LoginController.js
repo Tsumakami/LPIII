@@ -1,9 +1,17 @@
-class LoginController {
+class LoginController extends TokenController{
     
     constructor(){
+        super();
         this.email = '';
         this.password = '';       
-       
+        
+        let token = this.getTokenInSession()
+        if(token == null || token == ''){
+            console.log("aaaaaaaaaaaaaaaa");
+            this.requestToken();
+        }
+        console.log("TOKEN:", this.getTokenInSession());
+
         document.getElementsByClassName("login-form")[0].addEventListener('submit', () => {
             event.preventDefault();
         });
@@ -36,7 +44,7 @@ class LoginController {
             xhttp.open("POST", endPoint, true);
             xhttp.responseType = 'json';
             xhttp.setRequestHeader("Content-Type", "application/json")
-            xhttp.setRequestHeader("x-access-token", "9c4d47f35442bebb1c2f11c3df3bde7bfcd53f710a048dc9974ba98c6bc9f2b115b911edd65ea8ffdd117b87a41b28f3")
+            xhttp.setRequestHeader("x-access-token", this.getTokenInSession());
             
             xhttp.send(JSON.stringify(body));
                               
