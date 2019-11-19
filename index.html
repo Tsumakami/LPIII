@@ -18,74 +18,17 @@
 
       <div class="slider">
         <ul class="slides">
-         
+
         </ul>
       </div>
 
     <div class="section" >
       <div class="row">
         <div class="col s12" ><span class="flow-text">Mais vendidos</span>
-          <div class="row">
-            <div class="col s12 m3">
-              <div class="card small">
-                <!-- COLOCA O PROD AQUI -->
-                <div class="card-image">
-                  <img src="https://cdn.pichau.com.br/catalog/product/cache/14035723553183b9d29277c409fc60a6/g/9/g933-3.jpg">
-                </div>
-                <div class="card-content">
-                  <strong>R$ </strong>
-                  00,00
-                </div>
-                <div class="card-action center-align">
-                  <a class="waves-effect waves-light black btn">Comprar</a>
-                </div>
-              </div>
-            </div>
-            <div class="col s12 m3">
-              <div class="card small">
-                <!-- COLOCA O PROD AQUI -->
-                <div class="card-image">
-                  <img class="black-text" src="https://cdn.pichau.com.br/catalog/product/cache/14035723553183b9d29277c409fc60a6/g/9/g933-3.jpg">
-                </div>
-                <div class="card-content">
-                  <strong>R$ </strong>
-                  00,00
-                </div>
-                <div class="card-action center-align">
-                  <a class="waves-effect waves-light black btn">Comprar</a>
-                </div>
-              </div>
-            </div>
-            <div class="col s12 m3">
-              <div class="card small">
-                <!-- COLOCA O PROD AQUI -->
-                <div class="card-image">
-                  <img src="https://cdn.pichau.com.br/catalog/product/cache/14035723553183b9d29277c409fc60a6/g/9/g933-3.jpg">
-                </div>
-                <div class="card-content">
-                  <strong>R$ </strong>
-                  00,00
-                </div>
-                <div class="card-action center-align">
-                  <a class="waves-effect waves-light black btn">Comprar</a>
-                </div>
-              </div>
-            </div>
-            <div class="col s12 m3">
-              <div class="card small">
-                <!-- COLOCA O PROD AQUI -->
-                <div class="card-image small">
-                  <img src="https://cdn.pichau.com.br/catalog/product/cache/14035723553183b9d29277c409fc60a6/g/9/g933-3.jpg">
-                </div>
-                <div class="card-content">
-                  <strong>R$ </strong>
-                  00,00
-                </div>
-                <div class="card-action center-align">
-                  <a class="waves-effect waves-light black btn">Comprar</a>
-                </div>
-              </div>
-            </div>
+          <div class="row" id="bestSaller">
+
+
+
           </div>
         </div>
       </div>
@@ -161,84 +104,124 @@
 
     </div>
     <section class="section href-underline"><h3>Produtos</h3>
-      <div class="row" id="listaProdutos">
-      </div>
+      <div class="row" id="listaProdutos"></div>
     </section>
     <section>
       <object class="rodape" type="text/html" data="components/footer.html"></object>
     </section>
     <script src="plugins/materialize/js/materialize.js"></script>
     <script src="scripts/banner-home.js"></script>
-    
+
     <script>
-      var teste = [];
       $('document').ready(function(){
-        var settings = {
-          "async": true,
-          "crossDomain": true,
-          "url": "http://localhost:8080/ultimaTentativa/resources/produto",
-          "method": "GET",
-          "headers": {
-            "cache-control": "no-cache",
-            "Postman-Token": "4c48f971-4734-4dc8-ab35-d7fb1002dbf8"
-          }
-        }
+        $.ajax({
+            url:'https://floating-sands-83864.herokuapp.com/product',
+            dataType: 'json',
+            type: 'get',
+            success: function(response){
+                console.log(response);
+                var tam = response.length;
+                console.log(tam);
+                for(let i = 0; i < tam; i++){
+                  let salePrice = response[i].salePrice;
+                  let listPrice = response[i].listPrice;
 
-        $.ajax(settings).done(function (response) {
-          console.log(response);
+                  let firstParte = `
+                    <div class="col s12 m6 xl4">
+                      <div class="card sticky-action large hoverable">
+                        <span class="white-text badge black lighten-1 percent">Desconto 31%</span>
+                        <div class="card-image">
+                          <i class="material-icons waves-effect waves-circle close-icon activator">more_vert</i>
+                          <a href="https://materialize.myefforts.ru/iphone-7-plus-red-special-edition-256gb-en">
+                          <img class="responsive-img lazyloaded" src="${response[i].images[0].url}" data-src="https://materialize.myefforts.ru/image/cache/catalog/goods/smartphones/iphone/iphone-7-plus/iphone-7-plus-red-1-250x250.jpg" alt="iPhone 7 Plus (PRODUCT)RED™ Special Edition 256GB" title="iPhone 7 Plus (PRODUCT)RED™ Special Edition 256GB"></a>
+                        </div>
+                        <div class="card-content center-align">
+                          <span class="card-title">
+                            <a href="https://materialize.myefforts.ru/iphone-7-plus-red-special-edition-256gb-en" class="grey-text text-darken-4">${response[i].description}</a>
+                          </span>
+                        </div>
+                        <div class="card-action center-align grey lighten-5">
+                          <button class="btn btn-floating btn-large waves-effect waves-light black add-cart" title="Adicionar ao carrinho" onclick="cart.add('53');">
+                            <i class="material-icons">add_shopping_cart</i>
+                          </button>
+                          <span class="card-price old-price grey-text">De: R$ ${response[i].listPrice}</span><br/>`;
+                    let secondParte = '';
+                    if(salePrice == undefined || salePrice == ""){
+                      secondParte = `<span class="card-price black-text text-darken-2">Por: R$ ${response[i].listPrice }</span>`;
+                    }else{
+                      secondParte = `<span class="card-price black-text text-darken-2">Por: R$ ${response[i].salePrice}</span>`;
+                    }
 
-          tam = response.length;
-          for(let i = 0; i < tam; i++){
-            console.log(response[i].nome);
-
-            $("#listaProdutos").append(
-              `
-              <div class="col s12 m6 xl4">
-                <div class="card sticky-action large hoverable">
-                  <span class="white-text badge black lighten-1 percent">Desconto 31%</span>
-                  <div class="card-image">
-                    <i class="material-icons waves-effect waves-circle close-icon activator">more_vert</i>
-                    <a href="https://materialize.myefforts.ru/iphone-7-plus-red-special-edition-256gb-en">
-                    <img class="responsive-img lazyloaded" src="${response[i].imagem}" data-src="https://materialize.myefforts.ru/image/cache/catalog/goods/smartphones/iphone/iphone-7-plus/iphone-7-plus-red-1-250x250.jpg" alt="iPhone 7 Plus (PRODUCT)RED™ Special Edition 256GB" title="iPhone 7 Plus (PRODUCT)RED™ Special Edition 256GB"></a>
-                  </div>
-                  <div class="card-content center-align">
-                    <span class="card-title">
-                      <a href="https://materialize.myefforts.ru/iphone-7-plus-red-special-edition-256gb-en" class="grey-text text-darken-4">${response[i].nome}</a>
-                    </span>
-                  </div>
-                  <div class="card-action center-align grey lighten-5">
-                    <button class="btn btn-floating btn-large waves-effect waves-light black add-cart" title="Adicionar ao carrinho" onclick="cart.add('53');">
-                      <i class="material-icons">add_shopping_cart</i>
-                    </button>
-                    <span class="card-price old-price grey-text">De: R$ ${response[i].preco + 1000}</span><br/>
-                    <span class="card-price black-text text-darken-2">Por: R$ ${response[i].preco}</span>
-                    <div class="rating">
-                      <hr>
-                      <span class="grey lighten-5">
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star_border</i>
-                      </span>
+                    let thirdParte = `
+                        <div class="rating">
+                          <hr>
+                          <span class="grey lighten-5">
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star_border</i>
+                          </span>
+                        </div>
+                        <a href="https://materialize.myefforts.ru/iphone-7-plus-red-special-edition-256gb-en" class="btn waves-effect waves-light black width-max">Mais Informações</a>
+                      </div>
+                      <div class="card-reveal">
+                        <span class="card-title">
+                          <a href="https://materialize.myefforts.ru/iphone-7-plus-red-special-edition-256gb-en" class="grey-text text-darken-4">iPhone 7 Plus (PRODUCT)RED™ Special Edition 256GB</a>
+                          <i class="material-icons waves-effect waves-circle close-icon">close</i>
+                        </span>
+                        <p>Texto de demonstração blabalbalbal
+                          enchendo linhas para teste
+                          lalalalalalalalalalalal ta massa, top
+                          pão de alho.</p>
+                      </div>
                     </div>
-                    <a href="https://materialize.myefforts.ru/iphone-7-plus-red-special-edition-256gb-en" class="btn waves-effect waves-light black width-max">Mais Informações</a>
                   </div>
-                  <div class="card-reveal">
-                    <span class="card-title">
-                      <a href="https://materialize.myefforts.ru/iphone-7-plus-red-special-edition-256gb-en" class="grey-text text-darken-4">iPhone 7 Plus (PRODUCT)RED™ Special Edition 256GB</a>
-                      <i class="material-icons waves-effect waves-circle close-icon">close</i>
-                    </span>
-                    <p>Texto de demonstração blabalbalbal
-                      enchendo linhas para teste
-                      lalalalalalalalalalalal ta massa, top
-                      pão de alho.</p>
-                  </div>
-                </div>
-              </div>
-              `
+                  `;
+                  $("#listaProdutos").append(
+                    firstParte + secondParte + thirdParte
+                    );
+                  }
+                },
+            error: function(error){
+                alert("Algo de errado não está certo...");
+            }
 
-            );
+        });
+        $.ajax({
+            url:'https://floating-sands-83864.herokuapp.com/products/bestsellers',
+            dataType: 'json',
+            type: 'get',
+            success: function(response){
+                console.log("resposta2: " + JSON.stringify(response));
+                var tam = 4;
+                console.log(tam);
+                for(let i = 0; i < tam; i++){
+                  $("#bestSaller").append(
+
+                    `<div class="col s12 m3">
+                      <div class="card small">
+                        <!-- COLOCA O PROD AQUI -->
+                        <div class="card-image">
+                          <img src="${response[i].images[0].url}">
+                        </div>
+                        <div class="card-content">
+                          <strong>R$ </strong>
+                          ${response[i].salePrice}
+                        </div>
+                        <div class="card-action center-align">
+                          <a class="waves-effect waves-light black btn">Comprar</a>
+                        </div>
+                      </div>
+                    </div>`
+                    );
+                }
+              },
+                  error: function(error){
+                      alert("Algo de errado não está certo...");
+                  }
+              });
+
 
             $(".slides").append(`
             <li>
@@ -251,11 +234,9 @@
               </a>
             </li>
             `);
-          }
-
         });
-      });
-      
+
+
     </script>
     </body>
   </html>
