@@ -34,6 +34,7 @@ document.querySelector('#nome').addEventListener("focusout", function () {
 document.querySelector('#cpf').addEventListener("focusout", function maskCPF() {
     var cpf = document.querySelector('#cpf').value;
     if (cpf.length == 11) {
+        sessionStorage.setItem("cpf", cpf);
         document.querySelector('#cpf').setAttribute("maxlength", "14");
         var cpf = document.querySelector('#cpf').value;
         var textCpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
@@ -120,6 +121,7 @@ function validateCPF(cpf) {
 document.querySelector('#telefone').addEventListener("focusout", function maskPhone() {
     var phone = document.querySelector('#telefone').value;
     if (phone.length == 10) {
+        sessionStorage.setItem("phone", phone);
         var dd = phone[0] + phone[1];
         var first = phone[2] + phone[3] + phone[4] + phone[5];
         var second = phone[6] + phone[7] + phone[8] + phone[9];
