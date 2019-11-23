@@ -7,7 +7,6 @@ class LoginController extends TokenController{
         
         let token = this.getTokenInSession()
         if(token == null || token == ''){
-            console.log("aaaaaaaaaaaaaaaa");
             this.requestToken();
         }
         console.log("TOKEN:", this.getTokenInSession());
@@ -52,4 +51,8 @@ class LoginController extends TokenController{
            
     }
 
+    static logout(){
+        sessionStorage.clear();
+        window.location.reload();
+    }
 }

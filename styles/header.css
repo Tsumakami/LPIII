@@ -51,3 +51,9 @@ input#search {
 .icon-menu{
   color:white;
 }
+
+#dropdownUser {
+  overflow: hidden;
+  width: auto;
+  
+}
