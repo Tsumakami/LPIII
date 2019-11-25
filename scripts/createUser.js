@@ -1,3 +1,5 @@
+var cookie = sessionStorage.getItem('token');
+
 $("#button").click(function () {
     var username = $('#nome').val();
     var cpf = sessionStorage.getItem("cpf");
@@ -11,9 +13,12 @@ $("#button").click(function () {
     console.log(password);
 
     $.ajax({
-        url:`https://floating-sands-83864.herokuapp.com/register`,
+        url: `https://floating-sands-83864.herokuapp.com/register`,
         dataType: 'json',
         type: 'post',
+        headers: {
+            "token": cookie
+        },
         data: {
             'username': username,
             'identityDocument': cpf,
@@ -21,11 +26,12 @@ $("#button").click(function () {
             'email': email,
             'password': password
         },
-        success: function(response){         
-            alert("Usuário Registrado com sucesso!");   
+        success: function (response) {
+            alert("Usuário Registrado com sucesso!");
         },
-        error: function(error){
+        error: function (error) {
             alert("Algo de errado não está certo...");
-        }  
+        }
     });
 });
+
