@@ -1,4 +1,14 @@
-var cookie = sessionStorage.getItem('token');
+var TokenControllerInstance = new TokenController();
+
+var TokenValidate = TokenControllerInstance.getTokenInSession();
+var Token = '';
+
+if (TokenValidate == null || TokenValidate == undefined || TokenValidate == '') {
+    TokenControllerInstance.requestToken();
+    Token = sessionStorage.setItem('token');
+} else {
+    Token = TokenValidate;
+}
 
 $("#button").click(function () {
     var username = $('#nome').val();
@@ -7,25 +17,23 @@ $("#button").click(function () {
     var email = $('#email').val();
     var password = $('#password').val();
 
-    console.log(username);
-    console.log(cpf);
-    console.log(phone);
-    console.log(password);
-
     $.ajax({
         url: `https://floating-sands-83864.herokuapp.com/register`,
         dataType: 'json',
+        contentType: "application/json",
         type: 'post',
         headers: {
-            "token": cookie
+            'x-access-token': Token
         },
-        data: {
+        data: JSON.stringify({
             'username': username,
-            'identityDocument': cpf,
-            'cellPhone': phone,
             'email': email,
-            'password': password
-        },
+            'password': password,
+            'firstName': username,
+            'lastName': username,
+            'cellPhone': phone,
+            'legalDocument': cpf      
+        }),
         success: function (response) {
             alert("Usuário Registrado com sucesso!");
         },
