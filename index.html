@@ -26,79 +26,16 @@
       <div class="row">
         <div class="col s12" ><span class="flow-text">Mais vendidos</span>
           <div class="row" id="bestSaller">
-
-
-
           </div>
         </div>
       </div>
     </div>
     <div class="section" >
       <div class="row">
-        <div class="col s12" ><span class="flow-text">Novidades</span>
-          <div class="row">
-            <div class="col s12 m3">
-              <div class="card small">
-                <!-- COLOCA O PROD AQUI -->
-                <div class="card-image">
-                  <img src="https://cdn.pichau.com.br/catalog/product/cache/14035723553183b9d29277c409fc60a6/g/9/g933-3.jpg">
-                </div>
-                <div class="card-content">
-                  <strong>R$ </strong>
-                  00,00
-                </div>
-                <div class="card-action center-align">
-                  <a href="pages/produto.html" class="waves-effect waves-light black btn">Comprar</a>
-                </div>
-              </div>
-            </div>
-            <div class="col s12 m3">
-              <div class="card small">
-                <!-- COLOCA O PROD AQUI -->
-                <div class="card-image">
-                  <img src="https://cdn.pichau.com.br/catalog/product/cache/14035723553183b9d29277c409fc60a6/g/9/g933-3.jpg">
-                </div>
-                <div class="card-content">
-                  <strong>R$ </strong>
-                  00,00
-                </div>
-                <div class="card-action center-align">
-                  <a href="pages/produto.html" class="waves-effect waves-light black btn">Comprar</a>
-                </div>
-              </div>
-            </div>
-            <div class="col s12 m3">
-              <div class="card small">
-                <!-- COLOCA O PROD AQUI -->
-                <div class="card-image">
-                  <img src="https://cdn.pichau.com.br/catalog/product/cache/14035723553183b9d29277c409fc60a6/g/9/g933-3.jpg">
-                </div>
-                <div class="card-content">
-                  <strong>R$ </strong>
-                  00,00
-                </div>
-                <div class="card-action center-align">
-                  <a href="pages/produto.html" class="waves-effect waves-light black btn">Comprar</a>
-                </div>
-              </div>
-            </div>
-            <div class="col s12 m3">
-              <div class="card small">
-                <!-- COLOCA O PROD AQUI -->
-                <div class="card-image small">
-                  <img src="https://cdn.pichau.com.br/catalog/product/cache/14035723553183b9d29277c409fc60a6/g/9/g933-3.jpg">
-                </div>
-                <div class="card-content">
-                  <strong>R$ </strong>
-                  00,00
-                </div>
-                <div class="card-action center-align">
-                  <a href="pages/produto.html" class="waves-effect waves-light black btn">Comprar</a>
-                </div>
-              </div>
-            </div>
+        <div class="col s12" >
+          <span class="flow-text">Novidades</span>
+          <div class="row" id="news">
           </div>
-        </div>
       </div>
     </div>
 
@@ -119,18 +56,26 @@
             dataType: 'json',
             type: 'get',
             success: function(response){
-                console.log(response);
+              //  console.log(response);
                 var tam = response.length;
-                console.log(tam);
+              //  console.log(tam);
                 for(let i = 0; i < tam; i++){
                   let salePrice = response[i].salePrice;
                   let listPrice = response[i].listPrice;
 
+                  let porcentagem = (100 - ((salePrice * 100) / listPrice)).toFixed(0) ;
+                  console.log("porcentagem: " + porcentagem);
+                  let spanPorcent = '';
+                  if(listPrice <= salePrice || salePrice == null){
+                    spanPorcent = '';
+                  }else{
+                    spanPorcent = `<span class="white-text badge black lighten-1 percent">Desconto ${porcentagem}%</span>`;
+                  }
                   let firstParte = `
                     <div class="col s12 m6 xl4">
-                      <div class="card sticky-action large hoverable">
-                        <span class="white-text badge black lighten-1 percent">Desconto 31%</span>
-                        <div class="card-image">
+                      <div class="card sticky-action large hoverable">`
+                        + spanPorcent +
+                        `<div class="card-image">
                           <i class="material-icons waves-effect waves-circle close-icon activator">more_vert</i>
                           <a href="https://materialize.myefforts.ru/iphone-7-plus-red-special-edition-256gb-en">
                           <img class="responsive-img lazyloaded" src="${response[i].images[0].url}" data-src="https://materialize.myefforts.ru/image/cache/catalog/goods/smartphones/iphone/iphone-7-plus/iphone-7-plus-red-1-250x250.jpg" alt="iPhone 7 Plus (PRODUCT)RED™ Special Edition 256GB" title="iPhone 7 Plus (PRODUCT)RED™ Special Edition 256GB"></a>
@@ -193,9 +138,9 @@
             dataType: 'json',
             type: 'get',
             success: function(response){
-                console.log("resposta2: " + JSON.stringify(response));
+              //  console.log("resposta2: " + JSON.stringify(response));
                 var tam = 4;
-                console.log(tam);
+              //  console.log(tam);
                 for(let i = 0; i < tam; i++){
                   $("#bestSaller").append(
 
@@ -222,11 +167,45 @@
                   }
               });
 
+              $.ajax({
+                  url:'https://floating-sands-83864.herokuapp.com/products/news',
+                  dataType: 'json',
+                  type: 'get',
+                  success: function(response){
+                      console.log(response);
+                      var tam = 4;
+                      //console.log(response);
+                      console.log(tam);
+                      for(let i = 0; i < tam; i++){
+                        $("#news").append(
+
+                          `<div class="col s12 m3">
+                            <div class="card small">
+                              <div class="card-image">
+                                <img src="${response[i].images[0].url}">
+                              </div>
+                              <div class="card-content">
+                                <strong>R$ </strong>
+                                ${response[i].listPrice}
+                              </div>
+                              <div class="card-action center-align">
+                                <a href="pages/produto.html" class="waves-effect waves-light black btn">Comprar</a>
+                              </div>
+                            </div>
+                          </div>`
+                          );
+                      }
+                    },
+                        error: function(error){
+                            alert("Algo de errado não está certo...");
+                        }
+                    });
+
 
             $(".slides").append(`
             <li>
               <a href="#">
-                <img class="img-bannerHome" src="${response[i].imagem}"> <!-- random image -->
+                <img class="img-bannerHome" src="${response[i].images[0].url}">
                 <div class="caption center-align">
                   <h3></h3>
                   <h5 class="light grey-text text-lighten-3"></h5>
