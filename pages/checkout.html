@@ -1,0 +1,149 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="../plugins/materialize/css/materialize.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='../styles/main.css'>
+    <title>Kapich</title>
+</head>
+<body>
+    <section>
+        <object class="cabecalho" type="text/html" data="../components/header.html"></object>
+    </section>
+    <div class="row"></div>
+    <div class="row">
+        <div class="col s12 m4">
+          <div class="card darken-1">
+            <div class="card-content black-text">
+              <span class="card-title black-text">Endereço:</span>
+              <form action="#">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input value="" id="pais" type="text" class="validate">
+                    <label class="active" for="pais">País</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input value="" id="UF" type="text" class="validate">
+                    <label class="active" for="UF">UF</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input value="" id="cidade" type="text" class="validate">
+                    <label class="active" for="cidade">Cidade</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input value="" id="bairro" type="text" class="validate">
+                    <label class="active" for="bairro">Bairro</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input value="" id="rua" type="text" class="validate">
+                    <label class="active" for="rua">Rua</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input value="" id="numero" type="text" class="validate">
+                    <label class="active" for="numero">Número</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input value="" id="complemento" type="text" class="validate">
+                    <label class="active" for="complemento">Complemento</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input value="" id="cep" type="text" class="validate">
+                    <label class="active" for="cep">CEP</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input value="" id="recebedor" type="text" class="validate">
+                    <label class="active" for="rua">Recebedor</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input value="" id="telefone" type="text" class="validate">
+                    <label class="active" for="telefone">Telefone</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="card-action" id="setEndereco">
+              <a href="#" class="black-text">Setar Endereço</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+            <div class="card darken-1">
+              <div class="card-content black-text">
+                <span class="card-title black-text">Pagamento:</span>
+                <div class="row">
+                  <div class="row"></div>
+                  <span class="card-title black-text">Cartão de Crédito</span>
+                  <div class="input-field col s12">
+                    <input value="" id="cardNumber" type="text" class="validate">
+                    <label class="active" for="cardNumber">Número do Cartão</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input value="" id="cardOwner" type="text" class="validate">
+                    <label class="active" for="cardOwner">Nome</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input value="" id="cardExpirationDate" type="text" class="validate">
+                    <label class="active" for="cardExpirationDate">Data de vencimento</label>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                      <input value="" id="cvv" type="text" class="validate">
+                      <label class="active" for="cvv">CVV</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <select id="numberOfInstallments">
+                          <option value="" disabled selected>Choose your option</option>
+                          <option value="1">Option 1</option>
+                          <option value="2">Option 2</option>
+                          <option value="3">Option 3</option>
+                        </select>
+                        <label>Materialize Select</label>
+                      </div>
+                  </div>
+              </div>
+              <div class="card-action">
+                <a href="#" class="black-text">setar cartão de Crédito</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <div class="card darken-1">
+              <div class="card-content black-text">
+                <span class="card-title black-text">Resumo:</span>
+                
+              </div>
+              
+              <div class="card-action">
+                <a href="#" class="black-text">Finalizar Compra</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    <footer>
+        <object class="rodape" type="text/html" data="../components/footer.html"></object>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../plugins/materialize/js/materialize.min.js"></script>
+    <script src="../scripts/Controllers/TokenController.js"></script>
+    <script src="../scripts/Controllers/CheckoutController.js"></script>
+    <script>
+      let checkoutController = new CheckoutController();
+
+    </script>
+
+</body>
+</html>
