@@ -107,3 +107,16 @@ div.card-image img {
   width: 12.5em !important;
   margin-left: 4.25em;
 }
+
+.cardc {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}

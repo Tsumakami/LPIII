@@ -1,75 +1,66 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link>
-            <meta charset="utf-8">
-            <title>KaPich</title>
-            <link href="../plugins/materialize/css/materialize.min.css" rel="stylesheet" type="text/css">
-            <link href="../styles/sobre.css" rel="stylesheet" type="text/css">
-            <link href="../styles/main.css" rel="stylesheet" type="text/css">
-            <link href="../styles/carrinho.css" rel="stylesheet" type="text/css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    </head>
+<html lang="pt-br" dir="ltr">
+  <head>
+      <link>
+    <meta charset="utf-8">
+    <title>KaPich</title>
+    <link href="../plugins/materialize/css/materialize.min.css" rel="stylesheet" type="text/css">
+    <link href="../styles/sobre.css" rel="stylesheet" type="text/css">
+    <link href="../styles/main.css" rel="stylesheet" type="text/css">
+    <link href="../styles/carrinho.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
 
 <body>
 
-        <section>
-                <object class="cabecalho" type="text/html" data="../components/header.html"></object>
-        </section>
-              
-        <section style="display: flexbox;">
-        <div class="shopping-cart">
-        
-          <div class="product">
-            <div class="product-image">
-              <img src="https://cdn.pichau.com.br/catalog/product/cache/14035723553183b9d29277c409fc60a6/g/9/g933-3.jpg">
-            </div>
-            <div class="product-details">
-              <div class="product-title">Headset</div>
-              <p class="product-description">Headset Gamer, compra ai pls</p>
-            </div>
-            <div class="product-price">24.99</div>
-            <div class="product-quantity">
-              <input type="number" value="2" min="1">
-            </div>
-            <div class="product-removal">
-              <button class="remove-product">
-                Remove
-              </button>
-            </div>
-            <div class="product-line-price">25.98</div>
-            </div>
-        
-          <div class="totals">
-            <div class="totals-item">
-              <label>Subtotal</label>
-              <div class="totals-value" id="cart-subtotal">71.97</div>
-            </div>
-            <div class="totals-item">
-              <label>Tax (5%)</label>
-              <div class="totals-value" id="cart-tax">3.60</div>
-            </div>
-            <div class="totals-item">
-              <label>Shipping</label>
-              <div class="totals-value" id="cart-shipping">15.00</div>
-            </div>
-            <div class="totals-item totals-item-total">
-              <label>Grand Total</label>
-              <div class="totals-value" id="cart-total">90.57</div>
-            </div>
-          </div>
-              
-              <button class="checkout">Checkout</button>        
-        </div>
-        </section>
-
     <section>
-        <object class="rodape" type="text/html" data="../components/footer.html"></object>
-    </section>
+        <object class="cabecalho" type="text/html" data="../components/header.html"></object>
+      </section>
 
-    <script src="../plugins/materialize/js/materialize.min.js"></script>
+      <div class="carrinho">
+          <h2>Carrinho</h2>
+          <table>
+            <thead>
+              <tr>
+                <td></td>
+                <td>Nome</td>
+                <td>Quantidade</td>
+                <td>Valor</td>
+                <td>Total</td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="https://cdn.pichau.com.br/catalog/product/cache/14035723553183b9d29277c409fc60a6/g/9/g933-3.jpg" style="width: 10%;"></td>
+                <td>Headset Gamer Bixoveio-V2</td>
+                <td>1</td>
+                <td>330.50</td>
+                <td class="item-total">330.50</td>
+                <td><a href="" class="remove-item">remover</a></td>
+              </tr>
+            </tbody>
+          </table>
+      
+          <div><input type="button" class="undo" value="Desfazer" /></div>             
+          <div><strong>Valor total: </strong> R$ <span class="valorTotal">0</span></div>
+          <div><strong>Quantidade de Produtos: </strong> <span class="qtdProdutos">0</span></div>    
+          <div align="right"><a href="checkout.html" class="waves-effect waves-light black btn">Comprar</a></div>      
+        </div>       
+      
+        <br /><br /><hr />
+
+  <section>
+      <object class="rodape" type="text/html" data="../components/footer.html"></object>
+  </section>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../plugins/materialize/js/materialize.js"></script>
+    <script src="../scripts/Controllers/TokenController.js"></script>
+    <script src="../scripts/Controllers/CheckoutController.js"></script>
     <script src="../scripts/carrinho.js"></script>
-    
+
 </body>
 </html>
