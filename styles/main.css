@@ -114,9 +114,15 @@ div.card-image img {
   margin: auto;
   text-align: center;
   font-family: arial;
+  margin-top:5%;
 }
 
 .price {
   color: grey;
   font-size: 22px;
 }
+.infoPrice{
+  margin-top: 8%;
+  font-size: larger;
+}
+
