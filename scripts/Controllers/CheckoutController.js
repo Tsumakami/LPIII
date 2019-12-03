@@ -30,17 +30,34 @@ class CheckoutController{
                 
     }
 
-    static sendEndereco(form){
+    sendEndereco(){
+        let sessao = sessionStorage.getItem('token');
+
+        let endereco = {
+            city: $("#cidade").val(),
+            state: $("#UF").val(),
+            country: $("#pais").val(),
+            number: $("#cidade").val(),
+            neighborhood: $("#bairro").val(),
+            street: $("#rua").val(),
+            complement: $("#complemento").val(),
+            reference: "",
+            zipCode: $("#cep").val(),
+            receiverName: $("#recebedor").val(),
+            phoneNumber: $("#telefone").val()
+        }
+
         let endPoint = "https://floating-sands-83864.herokuapp.com/checkout/shipping/address";
           
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                console.log(JSON.stringify(this.response));
-                               
+                console.log(this.response);
+                $("#successEndereco").append(`<i class="material-icons" style="color:green;">done</i>`);
 
             }else if(this.readyState == 4){
                 console.log("Falha ao setar o endereço");
+                alert(this.response.message);
             }
             
         };
@@ -49,20 +66,32 @@ class CheckoutController{
         xhttp.setRequestHeader("Content-Type", "application/json")
         xhttp.setRequestHeader("x-access-token", sessao);
         xhttp.responseType = 'json';
-        xhttp.send(JSON.stringify(form)); 
+        xhttp.send(JSON.stringify(endereco)); 
     }
 
-    static sendPayment(form){
+    sendPayment(){
+        let sessao = sessionStorage.getItem('token');
+
+        let creditCard = {
+            paymentMethod: "creditCard",
+            numberOfInstallments: 1,
+            cardNumber: $("#cardNumber").val(),
+            cardOwner: $("#cardOwner").val(),
+            cardExpirationDate: $("#cardExpirationDate").val(),
+            cvv: $("#cvv").val()
+        }
+
         let endPoint = "https://floating-sands-83864.herokuapp.com/checkout/payment/select";
           
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 console.log(this.response);
-                               
+                $("#successPayment").append(`<i class="material-icons" style="color:green;">done</i>`);  
 
             }else if(this.readyState == 4){
                 console.log("Falha ao setar o endereço");
+                alert(this.response.message);
             }
             
         };
@@ -71,19 +100,25 @@ class CheckoutController{
         xhttp.setRequestHeader("Content-Type", "application/json")
         xhttp.setRequestHeader("x-access-token", sessao);
         xhttp.responseType = 'json';
-        xhttp.send(JSON.stringify(form)); 
+        xhttp.send(JSON.stringify(creditCard)); 
     }
-    static sendOrder(form){
+    sendOrder(){
+        let sessao = sessionStorage.getItem('token');
+
+        let form = {};
         let endPoint = "https://floating-sands-83864.herokuapp.com/checkout/finish";
           
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                console.log(JSON.stringify(this.response));
-                        
+                console.log(this.response);
+                alert("Pedido Finalizado!")
+                setTimeout(100);
+                window.location.href = "../../index.html";         
 
             }else if(this.readyState == 4){
                 console.log("Falha ao setar o endereço");
+                alert(this.response.message);
             }
             
         };
@@ -96,7 +131,6 @@ class CheckoutController{
     }
 
     static _montResumo(order){
-        console.log("_montResumo");
         let commerceItems = order.commerceItems;
 
         console.log(order);

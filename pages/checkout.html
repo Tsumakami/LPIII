@@ -17,61 +17,62 @@
           <div class="card darken-1">
             <div class="card-content black-text">
               <span class="card-title black-text">Endereço:</span>
-              <form action="#">
-                <div class="row">
-                  <div class="input-field col s6">
-                    <input value="" id="pais" type="text" class="validate">
-                    <label class="active" for="pais">País</label>
-                  </div>
-                  <div class="input-field col s6">
-                    <input value="" id="UF" type="text" class="validate">
-                    <label class="active" for="UF">UF</label>
-                  </div>
+              
+              <div class="row">
+                <div class="input-field col s6">
+                  <input value="" id="pais" type="text" class="validate">
+                  <label class="active" for="pais">País</label>
                 </div>
-                <div class="row">
-                  <div class="input-field col s6">
-                    <input value="" id="cidade" type="text" class="validate">
-                    <label class="active" for="cidade">Cidade</label>
-                  </div>
-                  <div class="input-field col s6">
-                    <input value="" id="bairro" type="text" class="validate">
-                    <label class="active" for="bairro">Bairro</label>
-                  </div>
+                <div class="input-field col s6">
+                  <input value="" id="UF" type="text" class="validate">
+                  <label class="active" for="UF">UF</label>
                 </div>
-                <div class="row">
-                  <div class="input-field col s6">
-                    <input value="" id="rua" type="text" class="validate">
-                    <label class="active" for="rua">Rua</label>
-                  </div>
-                  <div class="input-field col s6">
-                    <input value="" id="numero" type="text" class="validate">
-                    <label class="active" for="numero">Número</label>
-                  </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input value="" id="cidade" type="text" class="validate">
+                  <label class="active" for="cidade">Cidade</label>
                 </div>
-                <div class="row">
-                  <div class="input-field col s6">
-                    <input value="" id="complemento" type="text" class="validate">
-                    <label class="active" for="complemento">Complemento</label>
-                  </div>
-                  <div class="input-field col s6">
-                    <input value="" id="cep" type="text" class="validate">
-                    <label class="active" for="cep">CEP</label>
-                  </div>
+                <div class="input-field col s6">
+                  <input value="" id="bairro" type="text" class="validate">
+                  <label class="active" for="bairro">Bairro</label>
                 </div>
-                <div class="row">
-                  <div class="input-field col s6">
-                    <input value="" id="recebedor" type="text" class="validate">
-                    <label class="active" for="rua">Recebedor</label>
-                  </div>
-                  <div class="input-field col s6">
-                    <input value="" id="telefone" type="text" class="validate">
-                    <label class="active" for="telefone">Telefone</label>
-                  </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input value="" id="rua" type="text" class="validate">
+                  <label class="active" for="rua">Rua</label>
                 </div>
-              </form>
+                <div class="input-field col s6">
+                  <input value="" id="numero" type="text" class="validate">
+                  <label class="active" for="numero">Número</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input value="" id="complemento" type="text" class="validate">
+                  <label class="active" for="complemento">Complemento</label>
+                </div>
+                <div class="input-field col s6">
+                  <input value="" id="cep" type="text" class="validate">
+                  <label class="active" for="cep">CEP</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input value="" id="recebedor" type="text" class="validate">
+                  <label class="active" for="rua">Recebedor</label>
+                </div>
+                <div class="input-field col s6">
+                  <input value="" id="telefone" type="text" class="validate">
+                  <label class="active" for="telefone">Telefone</label>
+                </div>
+              </div>
+              
             </div>
             <div class="card-action" id="setEndereco">
-              <a href="#" class="black-text">Setar Endereço</a>
+              <a href="#" class="black-text" onclick="checkoutController.sendEndereco();">Setar Endereço</a>
+              <span id="successEndereco"></span>
             </div>
           </div>
         </div>
@@ -115,7 +116,8 @@
                   </div>
               </div>
               <div class="card-action">
-                <a href="#" class="black-text">setar cartão de Crédito</a>
+                <a href="#" class="black-text" onclick="checkoutController.sendPayment();">setar cartão de Crédito</a>
+                <span id="successPayment"></span>
               </div>
             </div>
           </div>
@@ -138,7 +140,7 @@
               </div>
               
               <div class="card-action">
-                <a href="#" class="black-text">Finalizar Compra</a>
+                <a href="#" class="black-text" onclick="checkoutController.sendOrder();">Finalizar Compra</a>
               </div>
             </div>
           </div>
