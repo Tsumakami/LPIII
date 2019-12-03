@@ -142,11 +142,13 @@
                 var tam = 4;
               //  console.log(tam);
                 for(let i = 0; i < tam; i++){
+                  sessionStorage.setItem('id', response[i]._id);
                   $("#bestSaller").append(
 
                     `<div class="col s12 m3">
                       <div class="card small">
                         <!-- COLOCA O PROD AQUI -->
+                        <div style="text-align: center"> ${response[i].description} </div>
                         <div class="card-image">
                           <img src="${response[i].images[0].url}">
                         </div>
@@ -189,7 +191,7 @@
                                 330,50
                               </div>
                               <div class="card-action center-align">
-                                <a href="pages/produto.html" class="waves-effect waves-light black btn">Comprar</a>
+                                <a href="pages/produto.html" class="waves-effect waves-light black btn teste">Comprar</a>
                               </div>
                             </div>
                           </div>`
@@ -217,5 +219,8 @@
 
 
     </script>
+
+<script src="scripts/Controllers/TokenController.js"></script>
+<script src="scripts/addCart.js"></script>
     </body>
   </html>
