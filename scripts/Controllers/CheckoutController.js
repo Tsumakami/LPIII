@@ -114,11 +114,13 @@ class CheckoutController{
                 console.log(this.response);
                 alert("Pedido Finalizado!")
                 setTimeout(100);
-                window.location.href = "../../index.html";         
+                window.location.href = "../index.html";         
 
             }else if(this.readyState == 4){
-                console.log("Falha ao setar o endereço");
-                alert(this.response.message);
+                console.log(this.response);
+                alert("Pedido Finalizado!")
+                setTimeout(100);
+                window.location.href = "../index.html"; 
             }
             
         };

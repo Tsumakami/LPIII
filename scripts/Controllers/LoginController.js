@@ -33,7 +33,7 @@ class LoginController extends TokenController{
                 if (this.readyState == 4 && this.status == 200) {
                     console.log(this.response);
                     sessionStorage.setItem('email', this.response.email);
-                    window.location.href = "../../index.html";               
+                    window.location.href = "../index.html";               
                 }else if(this.readyState == 4){
                     alert("Falha ao efetuar o login");
                 }

@@ -71,7 +71,7 @@
               
             </div>
             <div class="card-action" id="setEndereco">
-              <a href="#" class="black-text" onclick="checkoutController.sendEndereco();">Setar Endereço</a>
+              <a href="#" class="btn" onclick="checkoutController.sendEndereco();">Setar Endereço</a>
               <span id="successEndereco"></span>
             </div>
           </div>
@@ -104,19 +104,10 @@
                       <input value="" id="cvv" type="text" class="validate">
                       <label class="active" for="cvv">CVV</label>
                     </div>
-                    <div class="input-field col s6">
-                        <select id="numberOfInstallments">
-                          <option value="" disabled selected>Choose your option</option>
-                          <option value="1">Option 1</option>
-                          <option value="2">Option 2</option>
-                          <option value="3">Option 3</option>
-                        </select>
-                        <label>Materialize Select</label>
-                      </div>
                   </div>
               </div>
               <div class="card-action">
-                <a href="#" class="black-text" onclick="checkoutController.sendPayment();">setar cartão de Crédito</a>
+                <a href="#" class="btn" onclick="checkoutController.sendPayment();">setar cartão de Crédito</a>
                 <span id="successPayment"></span>
               </div>
             </div>
