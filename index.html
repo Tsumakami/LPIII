@@ -13,13 +13,24 @@
   <body>
     <section>
       <object class="cabecalho" type="text/html" data="components/header.html"></object>
-    </section>
-
+    </section>   
 
       <div class="slider">
         <ul class="slides">
-
+          <li><img src="https://onbuzz.com.br/wp-content/uploads/2016/05/Img-Post760x400-7.png"></li>
+          <li><img src="https://assets.propmark.com.br/legacy/upload/2018/08/5b7ac844c635d-5b7ac854af429-980x480.jpg"></li>
+          <li><img src="https://designsbyaniket.files.wordpress.com/2015/06/1.png"></li>
+          <li><img src="https://webbypropaganda.com.br/wp-content/uploads/2013/09/Nokia-melhora-sensor-de-proximidade-e-touchscreen.jpg"></li>
+          <li><img src="https://cdn.blog.psafe.com/blog/wp-content/uploads/2019/01/Propaganda-672x372.jpg"></li>
+          <li><img src="https://i2.wp.com/www.aftvnews.com/wp-content/uploads/2016/03/amazon-echo-dot-front-low.jpg?fit=800%2C450&quality=100"></li>
         </ul>
+      </div>
+
+      <div style="width: 25em;
+      border-bottom: transparent;
+      margin-top: -1px; color: black; background-color: black;" class="input-field left">
+        <input id="search" type="search" required placeholder="Digite o que procura :)">
+        <i class="material-icons" onclick="removeTextoPesquisa()">close</i>
       </div>
 
     <div class="section" >
@@ -218,6 +229,28 @@
         });
 
 
+    </script>
+
+    
+   <script>
+    function pesquisa() {
+      
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('search');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("ulp");
+      li = ul.getElementsByTagName('li');
+    
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
     </script>
 
 <script src="scripts/Controllers/TokenController.js"></script>
