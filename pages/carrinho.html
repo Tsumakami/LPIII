@@ -32,21 +32,15 @@
                 <td></td>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td><img src="https://cdn.pichau.com.br/catalog/product/cache/14035723553183b9d29277c409fc60a6/g/9/g933-3.jpg" style="width: 10%;"></td>
-                <td>Headset Gamer Bixoveio-V2</td>
-                <td>1</td>
-                <td>330.50</td>
-                <td class="item-total">330.50</td>
-                <td><a href="" class="remove-item">remover</a></td>
-              </tr>
+
+            <tbody class="prod">
+              
             </tbody>
           </table>
       
           <div><input type="button" class="undo" value="Desfazer" /></div>             
           <div><strong>Valor total: </strong> R$ <span class="valorTotal">0</span></div>
-          <div><strong>Quantidade de Produtos: </strong> <span class="qtdProdutos">0</span></div>    
+          <div><strong>Quantidade de Produtos: </strong> <span class="quantidade"></span></div>    
           <div align="right"><a href="checkout.html" class="waves-effect waves-light black btn">Comprar</a></div>      
         </div>       
       
@@ -61,6 +55,24 @@
     <script src="../scripts/Controllers/TokenController.js"></script>
     <script src="../scripts/Controllers/CheckoutController.js"></script>
     <script src="../scripts/carrinho.js"></script>
+
+    <script>   
+              
+              let quanti = $('#quantidade').load(href + '#mostraquant');
+              for(let i = 0; i < quanti; i++){
+                $("#prod").append(
+                  `<tr>
+                <td><img src="https://cdn.pichau.com.br/catalog/product/cache/14035723553183b9d29277c409fc60a6/g/9/g933-3.jpg" style="width: 10%;"></td>
+                <td>Headset Gamer Bixoveio-V2</td>
+                <td>1</td>
+                <td>330.50</td>
+                <td class="item-total">330.50</td>
+                <td><a href="" class="remove-item">remover</a></td>
+              </tr>`
+                )
+              }
+              
+              </script>
 
 </body>
 </html>
