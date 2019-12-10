@@ -103,6 +103,18 @@ input.invalid:not([type]), input.invalid:not([type]):focus, input.invalid[type=t
   z-index: -1;
 } */
 
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none; 
+  opacity: 0.7; 
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
 div.card-image img {
   width: 12.5em !important;
   margin-left: 4.25em;

@@ -21,8 +21,9 @@
     <TABLE style="display: flexbox; border-left: 200px solid white;">
       <TR style="border-right: 300px solid white;">
       <TH COLSPAN="2"> <img src="https://cdn.pichau.com.br/catalog/product/cache/14035723553183b9d29277c409fc60a6/g/9/g933-3.jpg"> </TH>
-      <TH style="font-size: xx-large; border: 2px;"><p style="border: 4px solid black; font-size: xx-large; text-align: center;">$330,50</p>
-        <a href="#" class="waves-effect waves-light black btn comprar" style="align-self: center;">Comprar</a>
+      <TH style="font-size: xx-large; border: 2px;"><p style="border: 4px solid black; font-size: xx-large; text-align: center;">$330,50</p></TH>
+      <TH><p>Quantidade: <span id="mostraquant"></span></p><div class="slidecontainer"><input type="range" min="1" max="100" value="1" class="slider" id="quant"></div></TH>
+      <TH><a href="#" class="waves-effect waves-light black btn comprar" style="align-self: center;">Comprar</a></TH>
       </TR>
     </TABLE>
 
@@ -46,6 +47,18 @@
     <script src="../scripts/Controllers/TokenController.js"></script>
     <script src="../scripts/Controllers/CheckoutController.js"></script>
     <script src="../scripts/addCart.js"></script>
+
+    <script>
+    
+      var slider = document.getElementById("quant");
+      var output = document.getElementById("mostraquant");
+      output.innerHTML = slider.value;
+      
+      slider.oninput = function() {
+        output.innerHTML = this.value;
+      }
+      
+      </script>
 
     </body>
   </html>
