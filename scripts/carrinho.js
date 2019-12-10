@@ -61,7 +61,5 @@ var aposCarregar = function(){
     $('.remove-item').click(removeItem);
     $('.undo').click(desfazAlteracao);
     $('.carrinho tbody tr').hover(efeitoIn, efeitoOut);
-    //$('.alterna-propaganda').click(alternaPropagandas);
-    //criaPropagandas();
 };
 $(aposCarregar);

@@ -34,13 +34,20 @@
             </thead>
 
             <tbody class="prod">
-              
+              <tr>
+                <td><img src="https://cdn.pichau.com.br/catalog/product/cache/14035723553183b9d29277c409fc60a6/g/9/g933-3.jpg" style="width: 10%;"></td>
+                <td>Headset Gamer Bixoveio-V2</td>
+                <td><span id="qtdProdutos"></span></td>
+                <td>330.50</td>
+                <td class="item-total"><span id="vlr"></span></td>
+                <td><a href="" class="remove-item">remover</a></td>
+              </tr>
             </tbody>
           </table>
       
           <div><input type="button" class="undo" value="Desfazer" /></div>             
           <div><strong>Valor total: </strong> R$ <span class="valorTotal">0</span></div>
-          <div><strong>Quantidade de Produtos: </strong> <span class="quantidade"></span></div>    
+          <div><strong>Quantidade de Produtos: </strong> <span id="qtdProdutos2"></span></div>    
           <div align="right"><a href="checkout.html" class="waves-effect waves-light black btn">Comprar</a></div>      
         </div>       
       
@@ -57,22 +64,16 @@
     <script src="../scripts/carrinho.js"></script>
 
     <script>   
-              
-              let quanti = $('#quantidade').load(href + '#mostraquant');
-              for(let i = 0; i < quanti; i++){
-                $("#prod").append(
-                  `<tr>
-                <td><img src="https://cdn.pichau.com.br/catalog/product/cache/14035723553183b9d29277c409fc60a6/g/9/g933-3.jpg" style="width: 10%;"></td>
-                <td>Headset Gamer Bixoveio-V2</td>
-                <td>1</td>
-                <td>330.50</td>
-                <td class="item-total">330.50</td>
-                <td><a href="" class="remove-item">remover</a></td>
-              </tr>`
-                )
-              }
-              
-              </script>
+    var val = document.getElementById("qtdProdutos");
+    val.innerHTML = localStorage.getItem("quantidadee"); 
+
+    var val2 = document.getElementById("qtdProdutos2");
+    val2.innerHTML = localStorage.getItem("quantidadee");
+
+    var vlr = document.getElementById("vlr");
+    vlr.innerHTML = localStorage.getItem("quantidadee") * 330.5;
+
+    </script>
 
 </body>
 </html>
